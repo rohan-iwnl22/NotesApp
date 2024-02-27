@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ListItem from "../components/ListItem";
 
 const NotelistPage = () => {
   const [notes, setNotes] = useState([]);
@@ -21,10 +22,14 @@ const NotelistPage = () => {
   };
 
   return (
-    <div>
+    <div className="notes">
+      <div className="notes-header">
+        <h2 className="notes-title"> &#9782; Notes</h2>
+        <p className="notes-count">{notes.length}</p>
+      </div>
       <div className="note-list">
         {notes.map((note, index) => (
-          <h3 key={index}>{note.body}</h3>
+          <ListItem key={index} note={note}></ListItem>
         ))}
       </div>
     </div>
