@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ListItem from "../components/ListItem";
+import Add from "../components/Add";
 
 const NotelistPage = () => {
   const [notes, setNotes] = useState([]);
@@ -31,6 +32,7 @@ const NotelistPage = () => {
         {notes.map((note, index) => (
           <ListItem key={index} note={note}></ListItem>
         ))}
+        <Add />
       </div>
     </div>
   );
